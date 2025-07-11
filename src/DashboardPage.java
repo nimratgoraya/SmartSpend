@@ -952,7 +952,7 @@ try (Connection conn = DBConnection.getConnection()) {
     ResultSet rsBud = psBud.executeQuery();
     boolean noBudget = rsBud.next() && rsBud.getInt(1) == 0;
 
-    PreparedStatement psGoal = conn.prepareStatement("SELECT COUNT(*) FROM savings_goal WHERE user_id = ?");
+    PreparedStatement psGoal = conn.prepareStatement("SELECT COUNT(*) FROM savings_goals WHERE user_id = ?");
     psGoal.setInt(1, userId);
     ResultSet rsGoal = psGoal.executeQuery();
     boolean noGoal = rsGoal.next() && rsGoal.getInt(1) == 0;
@@ -1216,7 +1216,7 @@ private VBox buildSavingsGoalBox(int userId) {
     final double[] totalSaved = {0};
 
     try (Connection conn = DBConnection.getConnection()) {
-        PreparedStatement ps = conn.prepareStatement("SELECT goal_amount, saved_amount FROM savings_goal WHERE user_id = ?");
+        PreparedStatement ps = conn.prepareStatement("SELECT goal_amount, saved_amount FROM savings_goals WHERE user_id = ?");
         ps.setInt(1, userId);
         ResultSet rs = ps.executeQuery();
         if (rs.next()) {
@@ -1252,7 +1252,7 @@ private VBox buildSavingsGoalBox(int userId) {
                     double newGoal = Double.parseDouble(input);
                     try (Connection conn = DBConnection.getConnection()) {
                         PreparedStatement ps = conn.prepareStatement(
-                            "INSERT INTO savings_goal (user_id, goal_amount, saved_amount) VALUES (?, ?, ?) " +
+                            "INSERT INTO savings_goals (user_id, goal_amount, saved_amount) VALUES (?, ?, ?) " +
                             "ON DUPLICATE KEY UPDATE goal_amount = VALUES(goal_amount)"
                         );
                         ps.setInt(1, userId);
@@ -1316,7 +1316,7 @@ private VBox buildSavingsGoalBox(int userId) {
                 double newGoal = Double.parseDouble(input);
                 try (Connection conn = DBConnection.getConnection()) {
                     PreparedStatement ps = conn.prepareStatement(
-                        "INSERT INTO savings_goal (user_id, goal_amount, saved_amount) VALUES (?, ?, ?) " +
+                        "INSERT INTO savings_goals (user_id, goal_amount, saved_amount) VALUES (?, ?, ?) " +
                         "ON DUPLICATE KEY UPDATE goal_amount = VALUES(goal_amount)"
                     );
                     ps.setInt(1, userId);
@@ -1338,8 +1338,57 @@ private VBox buildSavingsGoalBox(int userId) {
             }
         });
     });
+    Button addSavingsButton = new Button("Add Savings");
+   
+addSavingsButton.setPrefWidth(150);
+addSavingsButton.setMinWidth(150);
+addSavingsButton.setMaxWidth(150);
+addSavingsButton.setPrefHeight(35);
+addSavingsButton.setMinHeight(35);
+addSavingsButton.setMaxHeight(35);
+addSavingsButton.setStyle("-fx-background-color: #A6C8FF; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px;");
 
-    VBox box = new VBox(10, heading, progressLabel, goalProgress, setGoalButton);
+
+addSavingsButton.setOnAction(e -> {
+    TextInputDialog dialog = new TextInputDialog();
+    dialog.setTitle("Add to Savings");
+    dialog.setHeaderText("Enter the amount you've saved");
+    dialog.setContentText("Saved Amount:");
+
+    dialog.showAndWait().ifPresent(input -> {
+        try {
+            double addedAmount = Double.parseDouble(input);
+            totalSaved[0] += addedAmount;
+
+            try (Connection conn = DBConnection.getConnection()) {
+                PreparedStatement ps = conn.prepareStatement(
+                    "UPDATE savings_goals SET saved_amount = ? WHERE user_id = ?"
+                );
+                ps.setDouble(1, totalSaved[0]);
+                ps.setInt(2, userId);
+                ps.executeUpdate();
+            }
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Savings Updated");
+            alert.setHeaderText(null);
+            alert.setContentText("₹" + addedAmount + " added to your savings.");
+            alert.showAndWait();
+
+            new DashboardPage(userId).start((Stage) addSavingsButton.getScene().getWindow(), userId);
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    });
+});
+
+HBox buttonsRow = new HBox(10, addSavingsButton, setGoalButton);
+buttonsRow.setAlignment(Pos.CENTER_LEFT);
+
+VBox box = new VBox(10, heading, progressLabel, goalProgress, buttonsRow);
+
+   
     box.setPadding(new Insets(20, 50, 20, 50));
     box.setPrefWidth(1030);
     box.setStyle("-fx-background-color: white; -fx-background-radius: 12; "
