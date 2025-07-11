@@ -1,5 +1,5 @@
 # 💸 SmartSpend – Smart Spending Habit Analyzer  (Track Smart, Spend Smart)
-> A JavaFX-based personal finance tracker that helps you understand and improve your spending habits.
+> A Java and SQL based personal finance tracker that helps you understand and improve your spending habits.
 
 ---
 
