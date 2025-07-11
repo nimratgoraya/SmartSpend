@@ -1,0 +1,7 @@
+{
+  "java.project.sourcePaths": ["src"],
+  "java.project.referencedLibraries": [
+    "lib/**/*.jar",
+    "C:/Users/ASUS/OneDrive/Desktop/javaFX setup/javafx-sdk-24.0.1/lib/*.jar"
+  ]
+}

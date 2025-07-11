@@ -1,0 +1,507 @@
+.root {
+    -fx-font-family: "Poppins", "Montserrat", sans-serif;
+}
+
+/* LEFT PANE */
+.left-pane {
+    -fx-background-color: #C8E6C9;
+    -fx-pref-width: 701px;
+    -fx-pref-height: 1024px;
+    -fx-alignment: top-center;
+}
+
+.logo {
+    -fx-text-fill: white;
+    -fx-font-size: 96px;
+    -fx-font-weight: bold;
+    -fx-padding: 0;
+    -fx-font-family: "Montserrat", sans-serif; /* ✅ Montserrat only */
+}
+
+.slogan {
+    -fx-text-fill: white;
+    -fx-font-size: 40px;
+    -fx-font-weight: 800;
+    -fx-padding: 0 0 30 0;
+    -fx-font-family: "Montserrat", sans-serif; /* ✅ Montserrat only */
+}
+
+/* RIGHT CARD (full pane) */
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 0;
+    -fx-padding: 40;
+    -fx-spacing: 16;
+    -fx-effect: none;
+    -fx-pref-width: 739px;
+    -fx-max-width: 739px;
+    -fx-pref-height: 1024px;
+    -fx-alignment: center;
+    -fx-font-family: "Poppins", sans-serif;
+}
+
+/* HEADINGS */
+.heading {
+    -fx-font-size: 40px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+    -fx-font-family: "Poppins", sans-serif; /* ✅ Poppins only */
+}
+
+.subheading {
+    -fx-font-size: 32px;
+    -fx-text-fill: #666;
+    -fx-font-weight: bold;
+    -fx-padding-bottom: 0;
+    -fx-font-family: "Poppins", sans-serif; /* ✅ Poppins only */
+}
+
+/* INPUT LABELS */
+.input-label {
+    -fx-font-size: 24px;
+    -fx-text-fill: #555;
+    -fx-font-weight: bold;
+    -fx-alignment: center-left;
+    -fx-max-width: 400px;
+    -fx-pref-width: 400px;
+    -fx-padding: 0 0 2 0;
+}
+
+/* INPUTS */
+.input {
+    -fx-background-color: white;
+    -fx-border-color: #A5D6A7;
+    -fx-border-width: 2px;
+    -fx-border-radius: 15;
+    -fx-padding: 0 15 0 15;
+    -fx-font-size: 14px;
+    -fx-pref-width: 400px;
+    -fx-pref-height: 51px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 4, 0, 0, 1);
+}
+
+/* BUTTON */
+.button {
+    -fx-background-color: #A5D6A7;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 36px;
+    -fx-background-radius: 15;
+    -fx-cursor: hand;
+    -fx-pref-width: 238px;
+    -fx-pref-height: 66px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 4, 0, 0, 2);
+    -fx-padding: 0 20 0 20;
+}
+
+/* LINKS */
+.link {
+    -fx-text-fill: #2c7be5;
+    -fx-underline: true;
+    -fx-cursor: hand;
+    -fx-padding-top: 4;
+    -fx-alignment: center;
+    -fx-font-family: "Roboto", sans-serif;
+    -fx-font-size: 20px;
+}
+
+
+
+/* DASHBOARD PAGE */
+
+
+.logo-text {
+    -fx-font-family: "Montserrat", sans-serif;
+    -fx-font-size: 40px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #A5D6A7;  /* ✅ pastel green */
+}
+
+.nav-item {
+    -fx-font-family: "Poppins", sans-serif;
+    -fx-font-size: 24px;
+    -fx-font-weight: 500;
+    -fx-text-fill: #333;
+}
+
+.nav-item-active {
+    -fx-font-weight: bold;
+}
+
+.nav-item:hover {
+    -fx-underline: true;
+    -fx-cursor: hand;
+}
+
+/* Top Cards Text */
+.card-top {
+    -fx-font-family: "Poppins", sans-serif;
+    -fx-font-size: 21px;
+    -fx-font-weight: 700; /* ✅ more bold again */
+    -fx-text-fill: #000000;
+}
+
+.card-mid {
+    -fx-font-family: "Poppins", sans-serif;
+    -fx-font-size: 17px;
+    -fx-font-weight: 700; /* stays bolder */
+    -fx-text-fill: #555555;
+}
+
+/* ========== BAR CHART ========== */
+
+
+.chart-bar {
+    -fx-bar-fill: #92AAD1;
+}
+
+.chart-plot-background {
+    -fx-background-color: transparent;
+}
+
+.axis-label {
+    -fx-font-size: 16px;
+    -fx-text-fill: #333;
+    -fx-font-family: "Poppins", sans-serif;
+}
+
+.axis-tick-mark {
+    -fx-font-size: 15px;
+    -fx-text-fill: #333;
+    -fx-font-family: "Poppins", sans-serif;
+}
+
+
+
+
+/* ========== BUDGET PROGRESS BAR ========== */
+.budget-progress-bg {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 6, 0, 0, 2);
+    -fx-pref-width: 1094px;
+    -fx-pref-height: 95px;
+    -fx-padding: 20;
+}
+
+.budget-progress {
+    -fx-accent: #FFCC84;
+    -fx-background-color: #E0E0E0;
+    -fx-background-radius: 12;
+}
+
+.budget-progress-label {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+    -fx-font-family: "Poppins", sans-serif;
+}
+
+/* ========== RECENT TRANSACTIONS TABLE ========== */
+
+
+.table-column {
+    -fx-font-size: 15px;
+    -fx-font-family: "Poppins", sans-serif;
+    -fx-font-weight: 500;
+    -fx-text-fill: #333;
+}
+
+/* Dashboard page new background */
+.dashboard-center-bg {
+    -fx-background-color: #E7F8E8;
+    -fx-padding: 30;
+}
+
+/* budget progress heading */
+.budget-heading {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Poppins", sans-serif;
+    -fx-text-fill: #333;
+}
+
+/* table heading above table */
+.transactions-heading {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Inter", sans-serif;
+    -fx-text-fill: #333333;
+}
+
+/* table column headers */
+.table-column-header {
+    -fx-font-size: 18px;
+    -fx-font-weight: 600;
+    -fx-font-family: "Inter", sans-serif;
+    -fx-text-fill: #333333;
+    -fx-alignment: center;
+}
+
+/* pie chart segments colors directly in code, no CSS */
+
+/* keep progress bar colors the same from before */
+/* bar graph rectangle */
+.bar-chart-bg {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 4, 0, 0, 2);
+    -fx-pref-width: 808px;
+    -fx-pref-height: 322px;
+    -fx-padding: 20;
+}
+
+/* budget progress rectangle */
+.budget-progress-bg {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 4, 0, 0, 2);
+    -fx-pref-width: 1094px;
+    -fx-pref-height: 95px;
+    -fx-padding: 20;
+}
+
+.bar-chart-bg {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 4, 0, 0, 2);
+    -fx-padding: 20;
+}
+
+.budget-progress-bg {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 4, 0, 0, 2);
+    -fx-padding: 20;
+}
+
+.transactions-table {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 4, 0, 0, 2);
+    -fx-padding: 10;
+}
+
+.chart-pie-label {
+    -fx-font-size: 18px;
+    -fx-font-weight: 700;
+    -fx-fill: black;
+}
+
+.section-heading {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+    -fx-font-family: "Poppins", sans-serif;
+}
+
+
+
+
+.table-view .table-cell {
+    -fx-font-size: 16px;
+    -fx-text-fill: #333;
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: white;
+}
+
+.bar-chart .chart-bar {
+    -fx-bar-fill: #92AAD1;
+}
+
+/* add expense page */
+
+
+/* Common input style */
+.form-input {
+    -fx-background-color: #CCCCCC;
+    -fx-background-radius: 8;
+    -fx-effect: dropshadow(two-pass-box, rgba(0,0,0,0.1), 3, 0, 0, 1);
+}
+
+/* Common button style */
+.form-button {
+    -fx-background-color: #A5D6A7;
+    -fx-background-radius: 8;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(two-pass-box, rgba(0,0,0,0.1), 4, 0, 0, 1);
+}
+
+/* Add Expense Heading */
+.form-heading {
+    -fx-font-family: "Montserrat";
+    -fx-font-size: 40px;
+    -fx-underline: true;
+    -fx-font-weight: bold;
+}
+
+/* Labels */
+.form-label {
+    -fx-font-family: "Montserrat";
+    -fx-font-size: 29px;
+}
+
+
+.table-view .column-header-background {
+    -fx-background-color: #C0F2D4;
+}
+
+.table-view .column-header {
+    -fx-background-color: #C0F2D4;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+}
+/* style.css additions */
+.popup-button {
+    -fx-background-radius: 8;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.settings-input {
+    -fx-background-color: #D9D9D9;
+    -fx-background-radius: 7;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 4, 0, 0, 2);
+}
+
+
+/* sttings page*/
+.settings-button {
+    -fx-background-color: #A5D6A7;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-font-size: 10px;
+    -fx-pref-width: 100px;
+    -fx-pref-height: 30px;
+}
+
+.settings-delete-button {
+    -fx-background-color: #FF7E7E;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-font-size: 10px;
+    -fx-pref-width: 150px;
+    -fx-pref-height: 40px;
+}
+
+
+
+/* ========== LOGOUT PAGE ========== */
+
+.logout-root {
+    -fx-background-color: #D3D3D3; /* light grey background */
+}
+
+.logout-card {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 6, 0, 0, 2);
+    -fx-pref-width: 400px;
+    -fx-pref-height: 250px;
+    -fx-alignment: center;
+    -fx-spacing: 20;
+    -fx-padding: 20;
+}
+
+.logout-heading {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+    -fx-font-family: "Poppins", sans-serif;
+}
+
+.logout-message {
+    -fx-font-size: 18px;
+    -fx-text-fill: #555;
+    -fx-font-family: "Poppins", sans-serif;
+}
+
+.logout-button {
+    -fx-background-color: #A5D6A7;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-pref-width: 120px;
+    -fx-pref-height: 40px;
+}
+
+.logout-button:hover {
+    -fx-background-color: #81C784;
+}
+
+
+/* ========== LOGOUT PAGE FINAL STYLES ========== */
+.logout-root {
+    -fx-background-color: transparent;
+}
+
+.logout-card {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 6, 0, 0, 2);
+    -fx-pref-width: 400px;
+    -fx-pref-height: 250px;
+    -fx-alignment: center;
+    -fx-spacing: 20;
+    -fx-padding: 20;
+}
+
+.logout-heading {
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: black;
+    -fx-font-family: "Poppins", sans-serif;
+}
+
+.logout-message {
+    -fx-font-size: 20px;
+    -fx-font-weight: 600;
+    -fx-text-fill: black;
+    -fx-font-family: "Poppins", sans-serif;
+}
+
+.logout-confirm-button {
+    -fx-background-color: #8DE190;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+    -fx-background-radius: 8;
+    -fx-pref-width: 120px;
+    -fx-pref-height: 50px;
+    -fx-effect: dropshadow(two-pass-box, rgba(0,0,0,0.2), 4, 0, 0, 2);
+    -fx-cursor: hand;
+}
+
+.logout-cancel-button {
+    -fx-background-color: #919391;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+    -fx-background-radius: 8;
+    -fx-pref-width: 120px;
+    -fx-pref-height: 50px;
+    -fx-effect: dropshadow(two-pass-box, rgba(0,0,0,0.2), 4, 0, 0, 2);
+    -fx-cursor: hand;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #C0F2D4;
+}
+
+.chart-horizontal-grid-lines {
+    -fx-stroke: #B0B0B0; /* gray color, or pick any visible color you like */
+    -fx-stroke-width: 1;
+}
+
+
+
